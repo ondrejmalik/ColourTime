@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>New Tab</title>
+  </head>
+  <body style="margin: 0px;">
+      <h1 id="text"style ="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%);font-size: 100px;font-family: Comic Sans MS"></h1>
+  </body>
+
+<script>
+function dateToColorCode(date) {
+    var hours = date.getHours().toString().padStart(2, '0');
+    var minutes = date.getMinutes().toString().padStart(2, '0');
+    var seconds = date.getSeconds().toString().padStart(2, '0');
+return '#' + hours + minutes + seconds;
+}
+    
+window.onload = setInterval(function() {
+    var date = new Date();
+    var colorCode = dateToColorCode(date);
+    console.log(colorCode); 
+    document.body.style.backgroundColor = colorCode;
+    document.getElementById("text").innerHTML = "" + colorCode;
+}, 1000);
+    
+    
+    
+</script>
+</html>
